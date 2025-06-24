@@ -42,6 +42,18 @@ Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+**To stop the development server:** Press `Ctrl + C` (or `Cmd + C` on macOS) in the terminal where the server is running.
+
+**To force close the port 5173 (if needed):**
+
+```bash
+# Find the process using port 5173
+lsof -ti:5173
+
+# Kill the process using port 5173
+kill -9 $(lsof -ti:5173)
+```
+
 ### `npm run build`
 
 Builds the app for production to the `dist` folder.\
@@ -52,6 +64,11 @@ The build is minified and the filenames include the hashes.
 ### `npm run preview`
 
 Locally preview the production build.
+
+### `npm run kill-port`
+
+Forcefully stops any process running on port 5173 (the default Vite development server port).\
+This is useful when the development server doesn't stop properly or the port remains occupied.
 
 ## 📁 Project Structure
 
